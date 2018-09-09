@@ -1,0 +1,36 @@
+﻿@model IEnumerable<RealEstateManager.Models.Listing>
+
+@{
+    ViewBag.Title = "Listings";
+}
+
+<h2>All Current Listings</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ListingStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ListingPrice)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ListingStart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ListingPrice)
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div>
+    @Html.ActionLink("Home", "Index", "Home")
+</div>
